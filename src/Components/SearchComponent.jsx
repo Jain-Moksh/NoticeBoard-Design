@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
+import { FaSearch } from "react-icons/fa";
+
+
 
 const SearchComponent = () => {
   const [inputValue, setInputValue] = useState('');
   const isFocused = inputValue !== '';
 
   return (
-    <div className="container mx-9">
+    <div className="container mx-9 ">
       {/* Search section div bar */}
-      <div className="mb-4 relative w-44 md:w-56 lg:w-56 h-5 ">
+      <div className="mb-4 relative w-44 md:w-56 lg:w-64 h-5 ">
         <label
           htmlFor="searchInput"
-          className={`absolute left-4 ${isFocused ? '-top-4 text-blue-500 text-sm' : 'top-1 text-gray-600 transition-all duration-1000 ease-in-out pointer-events-none'}`}
+          className={`absolute left-4 flex font-semibold ${isFocused ? '-top-4 text-blue-500 text-sm' : 'top-1 text-gray-600 transition-all duration-1000 ease-in-out pointer-events-none'}`}
         >
-          Search
+          Search <FaSearch className='ml-20 sm:ml-20 md:ml-32 lg:ml-40 mt-1'/>
         </label>
-        <input
+        <input 
           type="text"
           id="searchInput"
-          className="border-2 border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-black h-8 opacity-15 bg-black"
+          className="border-2 border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-black h-8 opacity-15 bg-black cursor-pointer"
           placeholder=""
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}

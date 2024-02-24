@@ -14,7 +14,16 @@ function NoticeBoard() {
             </div>
 
             {/* this is notice section  */}
-            <div className='flex flex-col items-center justify-center pt-3 pb-4 space-y-2 bg-gray-200'>
+            <div className='flex flex-col items-center justify-center pt-44 sm:pt-52 xl:pt-32 2xl:pt-16 pb-4 space-y-2 bg-gray-200 
+            h-[26rem] sm:h-[34rem] xl:h-[40rem] 2xl:h-[44rem]  overflow-y-scroll'>
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
+                <SingleNotice />
                 <SingleNotice />
                 <SingleNotice />
                 <SingleNotice />
