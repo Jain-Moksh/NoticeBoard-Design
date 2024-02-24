@@ -1,0 +1,51 @@
+import React from 'react';
+import SingleNotice from '../Components/SingleNotice';
+import SearchComponent from '../Components/SearchComponent';
+import LoginButton from '../Components/LoginButton';
+
+function NoticeBoard() {
+    return (
+        <div className='mx-auto justify-center w-[80%] mt-[5%] border-black max-w-screen-xl'>
+
+            {/* Search Section */}
+            <div className='bg-pink-100 rounded-t-lg h-14 pt-3'>
+                <SearchComponent />
+            </div>
+
+            {/* Notice Section - Scrollable */}
+            <div className='bg-gray-200 h-[70vh] overflow-y-auto'>
+                <div className='flex flex-col items-center justify-center space-y-2 p-4'>
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    <SingleNotice />
+                    {/* Add more SingleNotice components as needed */}
+                </div>
+            </div>
+
+            {/* Login/Signup Button */}
+            <div className='flex items-end justify-end mt-2'>
+                <LoginButton />
+            </div>
+
+        </div>
+    )
+}
+
+export default NoticeBoard;
