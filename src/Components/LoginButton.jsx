@@ -1,13 +1,26 @@
-import React from 'react';
-import { IoMdLogIn } from "react-icons/io";
-import './LoginButton.css'; // Import your CSS file for styling
+import React, { useState } from 'react';
+import { IoMdLogIn } from 'react-icons/io';
 
 function LoginButton() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <button className="custom-button flex space-x-1 w-[100%] md:w-[52%] lg:w-[40%] px-4 py-2">
-      <span>CONTINUE </span>
-      <span className='hidden sm:block'> WITH SIGNUP / LOGIN</span>
-      <span className='text-xl items-center pl-1 md:pl-1'> <IoMdLogIn /> </span>
+    <button
+      className={`relative flex space-x-1 overflow-hidden rounded py-2 px-4 sm:px-6 2xl:px-8 focus:outline-none focus:ring focus:border-blue-300 transform transition hover:scale-105 ${
+        isHovered ? 'bg-blue-900 text-white' : 'bg-white text-black'
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <span
+        className={`absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-200 to-blue-950 transition-transform transform ${
+          isHovered ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      ></span>
+      <span className="relative z-10 text-sm sm:text-base 2xl:text-xl font-semibold">LOGIN</span>
+      <span className="relative z-10 text-2xl 2xl:text-3xl">
+        <IoMdLogIn />
+      </span>
     </button>
   );
 }
